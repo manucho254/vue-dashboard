@@ -2,14 +2,10 @@
 <div class="home">
     <section class="p-3">
         <hr>
-        <div class="box is-flex">
-            <h1 class="is-size-5-touch is-size-5"><strong>Number of Logs: </strong></h1>
-            <p class="is-size-5-touch ml-4 is-size-4">( {{ logData.length }} )</p>
-        </div>
-        <div class='columns is-mobile is-centered mb-4'>
-            <div class='column is-12 p-2'>
+        <div class='columns is-mobile is-centered mb-4 mt-4'>
+            <div class='column is-12'>
                 <div class="table-container">
-                    <table class="table is-striped is-hoverable is-fullwidth bg-light">
+                    <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -17,9 +13,7 @@
                                 <th>Logs</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <AllLogs v-for="log in logData" :key="log.id" :log="log" />
-                        </tbody>
+                        <SearchAll v-for="log in logData" :key="log.id" :log="log" />
                     </table>
                 </div>
             </div>
@@ -30,12 +24,12 @@
 
 <script>
 import axios from 'axios'
-import AllLogs from '@/components/AllLogs.vue'
+import SearchAll from '@/components/SearchAll.vue'
 
 export default {
     name: 'Home',
     components: {
-        AllLogs
+        SearchAll
     },
     data() {
         return {
@@ -43,17 +37,24 @@ export default {
         }
     },
     mounted() {
-        this.getLogs()
+        let uri = window.location.search.substring(1)
+        let params = new URLSearchParams(uri)
+
+        if (params.get('query')) {
+            this.query = params.get('query')
+            this.logSearch()
+        }
     },
     methods: {
-        async getLogs() {
-            document.title = "Home/"
+        async logSearch() {
+            document.title = "Search/"
 
             await axios
-                .get(`/logs/`)
+                .post(`/logs/search/`, {
+                    'query': this.query
+                })
                 .then(response => {
                     this.logData = response.data
-                    console.log(this.logData)
                 })
                 .catch(error => {
                     console.log(error)
