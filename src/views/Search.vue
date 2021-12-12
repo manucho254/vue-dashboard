@@ -1,5 +1,5 @@
 <template>
-<div class="home">
+<div class="search">
     <section class="p-3">
         <hr>
         <div class='columns is-mobile is-centered mb-4 mt-4'>
