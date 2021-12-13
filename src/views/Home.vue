@@ -1,6 +1,18 @@
 <template>
 <div class="home">
-    <section class="p-3">
+    <section class="p-3 ">
+     <div class="is-flex is-justify-content-center mt-5 ">
+        <form method="get" action="/search/">
+            <div class="field has-addons">
+                <div class="control">
+                    <input type="text" class="input border-none is-rounded input-size" placeholder="Search" name="query" v-model="search">
+                </div>
+                <div class="control">
+                    <input class="button has-background-dark has-text-light is-rounded" type="submit" value="Search">
+                </div>
+            </div>
+        </form>
+      </div>
         <hr>
         <div class="box is-flex">
             <h1 class="is-size-5-touch is-size-5"><strong>Number of Logs: </strong></h1>
@@ -50,7 +62,7 @@ export default {
             document.title = "Home/"
 
             await axios
-                .get(`/logs/`)
+                .get(`/api/logs/`)
                 .then(response => {
                     this.logData = response.data
                     console.log(this.logData)

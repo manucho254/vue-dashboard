@@ -1,6 +1,18 @@
 <template>
  <div class="search">
     <section class="p-3">
+      <div class="is-flex is-justify-content-center mt-5 ">
+        <form method="get" action="/search/">
+            <div class="field has-addons">
+                <div class="control">
+                    <input type="text" class="input border-none is-rounded input-size" placeholder="Search" name="query" v-model="search">
+                </div>
+                <div class="control">
+                    <input class="button has-background-dark has-text-light is-rounded" type="submit" value="Search">
+                </div>
+            </div>
+         </form>
+        </div>
         <hr>
         <div class='columns is-mobile is-centered mb-4 mt-4'>
             <div class='column is-12'>
@@ -50,7 +62,7 @@ export default {
             document.title = "Search/"
 
             await axios
-                .post(`/logs/search/`, {
+                .post(`/api/logs/search/`, {
                     'query': this.query
                 })
                 .then(response => {
