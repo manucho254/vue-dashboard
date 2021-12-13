@@ -1,11 +1,11 @@
 <template>
-<tbody>
-    <tr>
-        <td>{{ log.id }}</td>
-        <td>{{ log.timestamp }}</td>
-        <td>{{ log.my_logs }}</td>
-    </tr>
-</tbody>
+    <tbody>
+        <tr>
+            <td>{{ log.id }}</td>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.my_logs }}</td>
+        </tr>
+    </tbody>
 
 </template>
 
@@ -15,7 +15,7 @@ export default {
     props: {
         log: {
             required: true
-        }
+      }
   }
 }
 </script>

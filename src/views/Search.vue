@@ -1,5 +1,5 @@
 <template>
- <div class="search">
+ <div class="Search">
     <section class="p-3">
       <div class="is-flex is-justify-content-center mt-5 ">
         <form method="get" action="/search/">
