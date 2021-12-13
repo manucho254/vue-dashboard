@@ -14,7 +14,7 @@
                     <div class="field">
                         <label>Password</label>
                         <div class="control">
-                            <input class="input" type="text" v-model="password">
+                            <input class="input" type="password" v-model="password">
                         </div>
                     </div>
                     <div class="notification is-danger" v-if="errors.length">
@@ -66,7 +66,7 @@ export default {
         localStorage.removeItem("token")
 
         await axios
-           .post("/auth/token/login/", formData)
+           .post("/api/auth/token/login/", formData)
            .then(response => {
                const token = response.data.auth_token
 
