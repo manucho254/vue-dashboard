@@ -58,8 +58,8 @@ export default {
         }
         if (!this.errors.length) {
             const formData = {
-                username: this.username,
-                password: this.password
+                password: this.password,
+                username: this.username
             }
         axios.defaults.headers.common["Authorization"] = ""
 
@@ -68,6 +68,7 @@ export default {
         await axios
            .post("/api/auth/token/login/", formData)
            .then(response => {
+               console.log(response.data.auth_token)
                const token = response.data.auth_token
 
                this.$store.commit('setToken', token)
