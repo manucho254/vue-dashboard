@@ -1,5 +1,5 @@
 <template>
-<div class="search">
+ <div class="search">
     <section class="p-3">
         <hr>
         <div class='columns is-mobile is-centered mb-4 mt-4'>
@@ -27,7 +27,7 @@ import axios from 'axios'
 import SearchAll from '@/components/SearchAll.vue'
 
 export default {
-    name: 'Home',
+    name: 'Search',
     components: {
         SearchAll
     },
