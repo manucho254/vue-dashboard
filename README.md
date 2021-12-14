@@ -1,4 +1,4 @@
-# vuelogtowerdashboard
+# vue-logtower-dashboard
 
 ## Project setup using yarn
 ```
