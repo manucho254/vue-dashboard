@@ -25,7 +25,9 @@
                                 <th>Logs</th>
                             </tr>
                         </thead>
-                        <SearchAll v-for="log in logData" :key="log.id" :log="log" />
+                        <tbody>
+                          <SearchAll v-for="log in logData" :key="log.id" :log="log" />
+                        </tbody>
                     </table>
                 </div>
             </div>
