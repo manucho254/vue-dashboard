@@ -90,7 +90,7 @@ export default {
                 .then(response => {
                     this.logData = response.data
                     this.logsFetched = response.data.results.length
-                    console.log(this.logData)
+
                 })
                 .catch(error => {
                     console.log(error)
