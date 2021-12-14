@@ -14,17 +14,17 @@
             </form>
         </div>
         <hr>
-        <div class="box is-flex">
-            <div class="p-3">
-                <h1 class="is-size-5-touch is-size-5"><strong>Total number of Logs: </strong></h1>
+        <div class="box columns is-multiline is-mobile">
+            <div class="p-3 column is-4">
+                <h1 class="is-size-5-touch is-size-5"><strong>Total number of logs: </strong></h1>
                 <p class="is-size-5-touch ml-4 is-size-4" placeholder="0">( {{ logData.count }} )</p>
             </div>
-            <div class="p-3">
-                <h1 class="is-size-5-touch is-size-5"><strong>Number of Logs fetched:</strong></h1>
+            <div class="p-3 column is-4">
+                <h1 class="is-size-5-touch is-size-5"><strong>Number of logs fetched:</strong></h1>
                 <p class="is-size-5-touch ml-4 is-size-4">( {{ logsFetched }} )</p>
             </div>
-            <div class="p-3 column is-offset-3">
-                <nav class="pagination is-centered p-2" role="navigation" aria-label="pagination">
+            <div class="p-3 column is-4">
+                <nav class="pagination is-centered" role="navigation" aria-label="pagination">
                     <ul class="pagination-list">
                         <li><a class="pagination-previous has-background-dark has-text-light" v-on:click="getPreviousPage()">&#171; Prev</a></li>
                         <li><a class="pagination-link" aria-label="Goto page 1">{{ currentPage }}</a></li>
