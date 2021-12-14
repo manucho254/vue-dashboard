@@ -26,9 +26,9 @@
             <div class="p-3 column is-offset-3">
                 <nav class="pagination is-centered p-2" role="navigation" aria-label="pagination">
                     <ul class="pagination-list">
-                        <li><a class="pagination-previous has-background-dark has-text-light" v-on:click="getPreviousPage()">Prev</a></li>
+                        <li><a class="pagination-previous has-background-dark has-text-light" v-on:click="getPreviousPage()">&#171; Prev</a></li>
                         <li><a class="pagination-link" aria-label="Goto page 1">{{ currentPage }}</a></li>
-                        <li><a class="pagination-next has-background-dark has-text-light" v-on:click="getNextPage()">Next</a></li>
+                        <li><a class="pagination-next has-background-dark has-text-light" v-on:click="getNextPage()">Next &#187;</a></li>
                     </ul>
                 </nav>
             </div>
