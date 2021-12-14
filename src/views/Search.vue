@@ -1,17 +1,17 @@
 <template>
- <div class="Search">
+<div class="Search">
     <section class="p-3">
-      <div class="is-flex is-justify-content-center mt-5 ">
-        <form method="get" action="/search/">
-            <div class="field has-addons">
-                <div class="control">
-                    <input type="text" class="input border-none is-rounded input-size" placeholder="Search" name="query" v-model="search">
+        <div class="is-flex is-justify-content-center mt-5 ">
+            <form method="get" action="/search/">
+                <div class="field has-addons">
+                    <div class="control">
+                        <input type="text" class="input border-none is-rounded input-size" placeholder="Search" name="query" v-model="search">
+                    </div>
+                    <div class="control">
+                        <input class="button has-background-dark has-text-light is-rounded" type="submit" value="Search">
+                    </div>
                 </div>
-                <div class="control">
-                    <input class="button has-background-dark has-text-light is-rounded" type="submit" value="Search">
-                </div>
-            </div>
-         </form>
+            </form>
         </div>
         <hr>
         <div class='columns is-mobile is-centered mb-4 mt-4'>

@@ -19,9 +19,9 @@
         <div class="navbar-menu is-hoverable" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
             <div class="navbar-end" v-if="$store.state.isAuthenticated === true">
                 <router-link to="/" class="navbar-item"><strong>Home</strong></router-link>
-              <span class="navbar-item">
-                <button @click="logout()" class="navbar-item button is-dark"><strong>Log out</strong></button>
-              </span>
+                <span class="navbar-item">
+                    <button @click="logout()" class="navbar-item button is-dark"><strong>Log out</strong></button>
+                </span>
             </div>
         </div>
     </nav>
@@ -39,22 +39,22 @@ export default {
         }
     },
     beforeCreate() {
-     this.$store.commit('initializeApp')
-     const token = this.$store.state.token
+        this.$store.commit('initializeApp')
+        const token = this.$store.state.token
 
-     if (token) {
-       axios.defaults.headers.common['Authorization'] = "Token" + token
-     }else {
-       axios.defaults.headers.common['Authorization'] = ""
-     }
-   },
+        if (token) {
+            axios.defaults.headers.common['Authorization'] = "Token" + token
+        } else {
+            axios.defaults.headers.common['Authorization'] = ""
+        }
+    },
     methods: {
-        logout () {
+        logout() {
             axios.defaults.headers.common["Authorization"] = ""
 
             localStorage.removeItem("token")
             localStorage.removeItem("username")
-            localStorage.removeItem("userid")         
+            localStorage.removeItem("userid")
 
             this.$store.commit('removeToken')
             this.$router.push('/login')
