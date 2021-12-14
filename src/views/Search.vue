@@ -61,10 +61,17 @@ export default {
         async logSearch() {
             document.title = "Search/"
 
+            let token = localStorage.getItem('token');
+            const authHeaders = {
+                'headers': {
+                    'Authorization': 'Token ' + token
+                }
+            }
+
             await axios
                 .post(`/api/logs/search/`, {
                     'query': this.query
-                })
+                }, authHeaders)
                 .then(response => {
                     this.logData = response.data
                 })
