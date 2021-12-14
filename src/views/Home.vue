@@ -17,7 +17,7 @@
         <div class="box is-flex">
             <div class="p-3">
               <h1 class="is-size-5-touch is-size-5"><strong>Total number of Logs: </strong></h1>
-              <p class="is-size-5-touch ml-4 is-size-4">( {{ logData.count }} )</p>
+              <p class="is-size-5-touch ml-4 is-size-4" placeholder="0">( {{ logData.count }} )</p>
             </div>
             <div class="p-3">
               <h1 class="is-size-5-touch is-size-5"><strong>Number of Logs fetched:</strong></h1>

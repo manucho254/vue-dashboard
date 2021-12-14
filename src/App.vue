@@ -18,8 +18,10 @@
         </div>
         <div class="navbar-menu is-hoverable" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
             <div class="navbar-end" v-if="$store.state.isAuthenticated === true">
-                <router-link to="/" class="navbar-item">Home</router-link>
-                <button @click="logout()" class="button button-ghost-background">Log out</button>
+                <router-link to="/" class="navbar-item"><strong>Home</strong></router-link>
+              <span class="navbar-item">
+                <button @click="logout()" class="navbar-item button is-dark"><strong>Log out</strong></button>
+              </span>
             </div>
         </div>
     </nav>
