@@ -15,6 +15,9 @@
         </div>
         <hr>
         <span class="p-3 is-size-4">Results for <span class="has-text-grey">{{ query }}</span></span>
+        <div class="is-loading-bar has-text-centered" v-bind:class="{'is-loading': $store.state.isLoading}">
+            <div class="lds-dual-ring"></div>
+        </div>
         <div class='columns is-mobile is-centered mb-4 mt-4'>
             <div class='column is-12'>
                 <div class="table-container">
@@ -71,7 +74,8 @@ export default {
                     'Authorization': 'Token ' + token
                 }
             }
-
+            this.$store.commit('setIsLoading', true)
+            
             await axios
                 .post(`/api/logs/search/`, {
                     'query': this.query
@@ -82,6 +86,7 @@ export default {
                 .catch(error => {
                     console.log(error)
                 })
+            this.$store.commit('setIsLoading', false)
         },
     }
 }

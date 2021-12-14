@@ -4,6 +4,7 @@ export default createStore({
     state: {
         isAuthenticated: false,
         token: '',
+        isLoading: false,
     },
     mutations: {
         initializeApp(state) {
@@ -14,6 +15,9 @@ export default createStore({
                 state.token = ''
                 state.isAuthenticated = false
             }
+        },
+        setIsLoading(state, status) {
+            state.isLoading = status
         },
         setToken(state, token) {
             state.token = token
