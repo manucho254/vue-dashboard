@@ -3,7 +3,7 @@
     <nav class="navbar is-dark p-5">
         <div class="navbar-brand">
             <router-link to="/" class="navbar-item hero">
-                <h3 class="is-size-5 is-success"><strong><span>Log</span>dashboard</strong></h3>
+                <h3><strong><span class="is-size-4">Logtower</span></strong></h3>
             </router-link>
             <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
                 <div v-if="!showMobileMenu">
