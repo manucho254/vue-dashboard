@@ -14,6 +14,7 @@
             </form>
         </div>
         <hr>
+        <span class="p-3 is-size-4">Results for <span class="has-text-grey">{{ query }}</span></span>
         <div class='columns is-mobile is-centered mb-4 mt-4'>
             <div class='column is-12'>
                 <div class="table-container">
@@ -26,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                          <SearchAll v-for="log in logData" :key="log.id" :log="log" />
+                            <SearchAll v-for="log in logData" :key="log.id" :log="log" />
                         </tbody>
                     </table>
                 </div>
@@ -48,6 +49,7 @@ export default {
     data() {
         return {
             logData: [],
+            query: '',
         }
     },
     mounted() {
