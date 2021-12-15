@@ -75,7 +75,7 @@ export default {
                 }
             }
             this.$store.commit('setIsLoading', true)
-            
+
             await axios
                 .post(`/api/logs/search/`, {
                     'query': this.query
@@ -86,6 +86,7 @@ export default {
                 .catch(error => {
                     console.log(error)
                 })
+                
             this.$store.commit('setIsLoading', false)
         },
     }
