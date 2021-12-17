@@ -1,23 +1,5 @@
 # vue-logtower-dashboard
 
-## Project setup using yarn
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-### yarn setup won't work since yarn.lock has been removed when hosting the application
-
-### npm will work well..
-
 ## Build Setup npm
 
 ### install dependencies
@@ -46,6 +28,30 @@ npm run build --report
 - The application uses axios to consume and display data from our backend api
 - default BaseURL
 >  axios.defaults.baseURL = 'https: //log-proj-redis-broker.herokuapp.com'
+
+- since the backed requires Authorization: Token {token}
+- All POST and GET request we send need the header
+"
+In views/Home.vue
+In views/Search.vue
+
+    let token = localStorage.getItem('token');
+    const authHeaders = {
+        'headers': {
+            'Authorization': 'Token ' + token
+        }
+    }
+
+"
+
+: this.$store.commit('setIsLoading', true) = This state that show a loading animation when set to true. default is (false).
+
+    await axios
+        .post(`/api/logs/search/`, {
+            'query': this.query
+        }, authHeaders)
+
+### state and store
 
 ```
 store/index.js
@@ -81,14 +87,14 @@ state: {
     }
 
 
-
 we first set the state of our application:
 isAuthenticated: false, This value will always be false until the user is authenticated.
-token: '',
-isLoading: false,
+token: '', : this value is always empty until the user is authenticated and then we get a token.
+isLoading: false,: for the loading animation.
 
 ```
 
+### routing
 
 ``` 
 router/index.js
@@ -103,9 +109,13 @@ router.beforeEach((to, from, next) => {
     }
 })
 
+Now we can add the logic to any of the url routes using
+
+meta: {
+    requireLogin: true
+}
 
 ```
-
 
 ### Heroku hosting
 ```
