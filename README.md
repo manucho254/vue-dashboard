@@ -14,6 +14,9 @@ yarn serve
 ```
 yarn build
 ```
+### yarn setup won't work since i remove the yarn.lock file when hosting the application
+
+### npm will work well..
 
 ## Build Setup npm
 
@@ -35,4 +38,25 @@ npm run build
 ### build for production and view the bundle analyzer report
 ```
 npm run build --report
+```
+
+# Lets Disect the app
+
+### Heroku hosting
+```
+server.js
+This is the server configuration for our application when hosting on services like heroku.
+It just a simple express script that helps in creating a server
+
+```
+
+### Netlify
+
+```
+Netlify is serverless so we dont need the server.js file here.
+
+netlify.toml
+
+This file contains the configuration  that helps with the routing of paths on netlify once the app is hosted in netlify.
+
 ```
