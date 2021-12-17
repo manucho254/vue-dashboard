@@ -42,7 +42,70 @@ npm run build --report
 
 # Lets Disect the app
 
-### 
+### api calls
+- The application uses axios to consume and display data from our backend api
+- default BaseURL
+>  axios.defaults.baseURL = 'https: //log-proj-redis-broker.herokuapp.com'
+
+```
+store/index.js
+Here is where we set the state of our application.
+
+state: {
+        isAuthenticated: false,
+        token: '',
+        isLoading: false,
+    },
+
+    mutations: {
+        initializeApp(state) {
+            if (localStorage.getItem('token')) {
+                state.token = localStorage.getItem('token')
+                state.isAuthenticated = true
+            } else {
+                state.token = ''
+                state.isAuthenticated = false
+            }
+        },
+        setIsLoading(state, status) {
+            state.isLoading = status
+        },
+        setToken(state, token) {
+            state.token = token
+            state.isAuthenticated = true
+        },
+        removeToken(state) {
+            state.token = ''
+            state.isAuthenticated = false
+        }
+    }
+
+
+
+we first set the state of our application:
+isAuthenticated: false, This value will always be false until the user is authenticated.
+token: '',
+isLoading: false,
+
+```
+
+
+``` 
+router/index.js
+
+This is logic for redirecting the user to the login page  if not Authenticated.
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
+        next({ name: 'Login', query: { to: to.path } });
+    } else {
+        next()
+    }
+})
+
+
+```
+
 
 ### Heroku hosting
 ```
@@ -59,6 +122,6 @@ It just a simple express script that helps in creating a server
 ```
 netlify.toml
 
-This file contains the configuration  that helps with the routing of paths on netlify once the app is hosted in netlify.
+This file contains the configuration  that helps with the routing of paths on netlify once the app is hosted.
 
 ```
