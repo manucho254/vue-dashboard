@@ -14,7 +14,7 @@ yarn serve
 ```
 yarn build
 ```
-### yarn setup won't work since i remove the yarn.lock file when hosting the application
+### yarn setup won't work since yarn.lock has been removed when hosting the application
 
 ### npm will work well..
 
