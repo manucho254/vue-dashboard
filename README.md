@@ -49,10 +49,22 @@ we first get the token from our local localstrogage and pass it ,and the create 
 
 : this.$store.commit('setIsLoading', true) = This state that show a loading animation when set to true. default is (false).
 
+views/Search.vue
+
     await axios
         .post(`/api/logs/search/`, {
             'query': this.query
         }, authHeaders)
+
+
+### componentS
+
+```
+
+ components/AllLogs.vue
+ component/SearchAll.vue
+
+```
 
 ### state and store
 
