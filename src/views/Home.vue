@@ -96,7 +96,8 @@ export default {
                 .get(`/api/logs/?page=` + this.currentPage, authHeaders)
                 .then(response => {
                     this.logData = response.data
-                    this.logsFetched = response.data.results.length
+                    console.log(this.logData.results)
+                    // this.logsFetched = response.data.results.length
 
                 })
                 .catch(error => {
