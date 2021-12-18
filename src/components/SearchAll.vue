@@ -1,6 +1,6 @@
 <template>
     <tr>
-        <td>{{ log.time }}</td>
+        <td>{{ log.log_time }}</td>
         <td>{{ log.type }}</td>
         <td>{{ log.appname }}</td>
         <td>{{ log.username }}</td>
