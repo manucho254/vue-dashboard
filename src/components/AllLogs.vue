@@ -1,8 +1,12 @@
 <template>
     <tr>
-        <td>{{ log.id }}</td>
-        <td>{{ log.timestamp }}</td>
+        <td>{{ log.time }}</td>
+        <td>{{ log.type }}</td>
+        <td>{{ log.appname }}</td>
+        <td>{{ log.username }}</td>
         <td>{{ log.my_logs }}</td>
+        <td>{{ log.traceback }}</td>
+    
     </tr>
 </template>
 

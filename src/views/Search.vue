@@ -24,7 +24,7 @@
                     <table class="table is-striped is-hoverable is-fullwidth bg-light">
                         <thead>
                             <tr>
-                                <th>Time</th>
+                                <th>Date/Time</th>
                                 <th>Logtype</th>
                                 <th>Appname</th>
                                 <th>Username</th>

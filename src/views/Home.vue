@@ -42,7 +42,7 @@
                     <table class="table is-striped is-hoverable is-fullwidth bg-light">
                         <thead>
                             <tr>
-                                <th>Time</th>
+                                <th>Date/Time</th>
                                 <th>Logtype</th>
                                 <th>Appname</th>
                                 <th>Username</th>
@@ -96,8 +96,9 @@ export default {
                 .get(`/api/logs/?page=` + this.currentPage, authHeaders)
                 .then(response => {
                     this.logData = response.data
-                    console.log(this.logData.results)
-                    // this.logsFetched = response.data.results.length
+                    
+                    console.log(this.logData)
+                    this.logsFetched = response.data.results.length
 
                 })
                 .catch(error => {
