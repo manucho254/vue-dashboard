@@ -24,9 +24,12 @@
                     <table class="table is-striped is-hoverable is-fullwidth bg-light">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Logtype</th>
+                                <th>Appname</th>
+                                <th>Username</th>
                                 <th>Logs</th>
+                                <th>Traceback</th>
                             </tr>
                         </thead>
                         <tbody>
